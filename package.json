@@ -1,0 +1,36 @@
+{
+    "name": "@wpazderski/kvapi-server",
+    "version": "1.0.0",
+    "description": "Server that provides a CRUD API for key-value storage",
+    "author": "Witold Pazderski",
+    "license": "MIT",
+    "homepage": "https://github.com/wpazderski/kvapi-server#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wpazderski/kvapi-server.git"
+    },
+    "bugs": {
+        "url": "https://github.com/wpazderski/kvapi-server/issues"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch",
+        "start": "node ./dist/start.js"
+    },
+    "dependencies": {
+        "classic-level": "^1.2.0",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.14",
+        "@types/node": "^18.8.3",
+        "@wpazderski/kvapi-types": "git+https://github.com/wpazderski/kvapi-types.git",
+        "typescript": "^4.8.4"
+    }
+}
