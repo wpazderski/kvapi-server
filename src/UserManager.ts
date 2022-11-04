@@ -113,7 +113,14 @@ export class UserManager {
             this.validateRegisteredUserRole(role);
             const password = this.hashUserPassword(plainPassword);
             const id = this.generateUserId();
-            const user = { id, login, password, role, privateData: null, lastPasswordUpdateTimestamp: 0 };
+            const user = {
+                id,
+                login,
+                password,
+                role,
+                privateData: null,
+                lastPasswordUpdateTimestamp: this.hasAnyUsers() ? 0 : Date.now(),
+            };
             this.users.push(user);
             this.onUsersArrayChanged();
             await this.db.write(id as string as Types.data.entry.Key, JSON.stringify(user) as Types.data.entry.Value);
