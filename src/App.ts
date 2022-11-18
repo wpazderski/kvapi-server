@@ -104,7 +104,7 @@ export class App {
                     console.log("Request:", req.url);
                 }
                 let requestUrl = req.url.replace(/^\/*(.*?)\/*$/, "$1").replace(/\.\./g, "");
-                if (!requestUrl.match(/\.[a-zA-Z]{1,5}$/)) {
+                if (!requestUrl.match(/\.[a-zA-Z0-9]{1,5}$/)) {
                     requestUrl = "index.html";
                 }
                 if (this.appConfig.devMode) {
